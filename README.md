@@ -1,1 +1,30 @@
 # SyriaTel-Churn-Project
+### Overview
+This project in which I analyzed customer data for the telecom company, SyriaTel. The dataset was used to predcit customer churn, whether or not a customer quit their phone plan and left the company. I also figured that finding out what features, or columns, in the dataset, are most important in predicting if a customer leaves the company and quits their phone plan. I used different classification models to make these predicitions. I started with a baseline logistic regression model, which was not very good at predicitng which customers would leave the company. After doing some feature engineering, and doing different models, such as KNN, decision trees, and random forest, I created a model that could predict the accuracu of customer churn up to 75%. I could also figure out the most important features predicting customer churn, which were number of customer service calls, and phone charges for calls made in daytime. 
+
+### Stakeholder and Business Problem
+The stakeholder was SyriaTel, a telecommunications company, and the problem was figuring out which customers would churn, and what caused these customers to leave. 
+
+### Data Understanding and Analysis
+The data came from a dataframe of information regarding roughly 3,300 customers of SyriaTel, which largely had customer data, and whether or not they left the company. The data had no NaN values, and did not need to be cleaned. There were several categorical columns, such as Area Code and State, which I one-hot-encoded in order to feed the information in these columns into my models. 
+
+### Description of Data
+
+### Initial Model
+The first model I created was a baseline logisitc regression model. The model had an accuracy of 86%, but the recall for the true value in the target variable was very low at 11%. This is very bad, as it means the model can only predict 11% of customers who actually did leave the company. There were more false negatives in the model than True Positives, which I had to account for in creating new better models. 
+
+### Fine Tuning the Model
+The baseline model had no categorical features. Also logisitc regression is not the best model, so I tried others. The first one I tried after was KNN, which was not very good, so I decided to use decision tree, and then Random Forest. I also had a huge class imbalance in the target variable, only 17% of the customers in the dataset churned, or left the company. As a result, all the models were very good at predicting True Negatives, or customers who did not leave, but this makes sense as they consist of 83% of the dataset. So I tried using SMOTE to address this imbalance. I also hypertuned the parameters for the Random Forest model using GridsearchCV. The best Random Forest model with categorical features encoded, using SMOTE, and optimized hyperparameter had a recall of 67%, meaning it could predict 67% of the customers who did leave the company.
+
+### Final Model
+On a hunch/whim, I decided to redo the Random Forest Model without using onehotencoded categorical columns. The new simple baseline was better than the final model with categorical columns so I decided to take this new approach. I hypertuned this Random Forest model, and created a final model with an overall accuracy of 96%, and a recall of 75% for the target variable, meaning it could predict up to 75% of customers who left, a significant improvement from the baseline logistic regression, which could only predcit 11% of people who left. 
+
+### Conclusion
+The most important criteria for determining customer churn in the SyriaTel, according to the data we collected, and models we used was customer service calls and daytime phone charges. The reason for this is kind of intuitive, customers who make more customer service calls obviosuly have more problems with their plan or service and would want to end their plan. According to the data, the reason that daytime phone charges were an important predictor for churn was because the company charged $0.17/minute for day calls, while calls in the evening cost $0.08/minute, and calls at night approximately $0.04. As customers were charged more for making calls during the day, customers who made more calls during the day were charged more, and thus had higher bills, which may have prompted some to leave the company.
+
+### Data
+
+### Presentation Link
+
+### Explanation of all files
+
