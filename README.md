@@ -28,4 +28,4 @@ https://www.kaggle.com/becksddf/churn-in-telecoms-dataset
 https://github.com/ArshPatel95/SyriaTel-Churn-Project/blob/main/SyriaTel%20Customer%20Churn%20Prediction.pptx
 
 ### Explanation of all files
-In my repository, I have my powerpoint, and my final jupyter notebook, which has all the steps I made in creating the model.
+In my repository, I have my powerpoint, and jupyter notebooks, which have all the steps I made in creating the model. However, all of my work is in my final notebook.
